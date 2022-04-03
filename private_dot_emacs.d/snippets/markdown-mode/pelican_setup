@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: pelican setup 
+# key: ps 
+# group: pelican 
+# --
+Title: $1 
+Date: $2 
+Modified: $3 
+Tags: $4 
+Keywords: $5 
+Category: $6 
+Slug: $7 
+Author: $8 
+Summary: $9 
+Status: $10 
+
+$0
