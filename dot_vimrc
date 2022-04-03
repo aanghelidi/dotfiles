@@ -1,0 +1,35 @@
+set number
+if has("eval")
+  let skip_defaults_vim = 1
+endif
+set nocompatible
+set autoindent
+set ruler
+set showmode
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set smartindent
+set smarttab
+set textwidth=80
+set expandtab
+set nobackup
+set noswapfile
+set nowritebackup
+set icon
+set hlsearch
+set incsearch
+set linebreak
+set clipboard=unnamed
+set hidden
+set autoread
+set history=100
+if has("syntax")
+  syntax enable
+endif
+set ttyfast
+filetype plugin on
+set background=dark
+au FileType python set shiftwidth=4
+au FileType python set tabstop=4
+au FileType python set shiftwidth=4
