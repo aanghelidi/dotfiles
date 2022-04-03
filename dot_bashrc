@@ -34,3 +34,4 @@ export TERMINAL=alacritty
 export EDITOR=vi
 
 alias cm=chezmoi
+alias la="ls -a"
