@@ -32,6 +32,22 @@ export GOBIN="/home/aangel/go/bin"
 export PATH=$PATH:$GOBIN
 export TERMINAL=alacritty
 export EDITOR=vi
+export VISUAL=vi
 
 alias cm=chezmoi
-alias la="ls -a"
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+alias k=kubectl
+alias ec="emacsclient -cnqua ''"
+
+if [ -f /usr/bin/nvim ]; then
+    alias vi=/usr/bin/nvim
+    export EDITOR=nvim
+    export VISUAL=nvim
+fi
