@@ -30,6 +30,7 @@ eval "$(starship init bash)"
 export GOPATH="/home/aangel/go"
 export GOBIN="/home/aangel/go/bin"
 export PATH=$PATH:$GOBIN
+export PATH="/usr/local/bin:$PATH"
 export TERMINAL=alacritty
 export EDITOR=vi
 export VISUAL=vi
@@ -45,6 +46,7 @@ eval "$(pyenv virtualenv-init -)"
 
 alias k=kubectl
 alias ec="emacsclient -cnqua ''"
+alias mg='emacsclient -cnqu -e \(magit-status\)'
 
 if [ -f /usr/bin/nvim ]; then
     alias vi=/usr/bin/nvim
