@@ -1,0 +1,9 @@
+[user]
+	email = {{ .email }}
+	name = {{ .name }}
+
+[merge]
+    tool = ediff
+
+[mergetool.ediff]
+cmd = emacsclient -cnqu -e \"(progn (setq ediff-quit-hook 'kill-emacs) (if (file-readable-p \\\"$BASE\\\") (ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\") (ediff-merge-files \\\"$LOCAL\\\" \\\"$REMOTE\\\" nil \\\"$MERGED\\\")))\"
