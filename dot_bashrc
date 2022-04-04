@@ -46,7 +46,7 @@ eval "$(pyenv virtualenv-init -)"
 
 alias k=kubectl
 alias ec="emacsclient -cnqua ''"
-alias mg='emacsclient -cnqu -e \(magit-status\)'
+alias mg='emacsclient -cnqu -e \(progn \(magit-status\) \(delete-other-windows\)\)'
 
 if [ -f /usr/bin/nvim ]; then
     alias vi=/usr/bin/nvim
