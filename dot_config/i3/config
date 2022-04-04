@@ -1,7 +1,6 @@
 set $mod Mod4
 font pango:monospace 8
 
-
 # Start picom
 exec --no-startup-id picom 
 
@@ -29,13 +28,16 @@ set $statussig SIGUSR1
 set $volumestep 5
 bindsym XF86AudioRaiseVolume exec --no-startup-id $volumepath/volume -an -t $statuscmd -u $statussig up $volumestep
 bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume -an -t $statuscmd -u $statussig down $volumestep
- bindsym XF86AudioMute exec --no-startup-id $volumepath/volume -an -t $statuscmd -u $statussig mute
+bindsym XF86AudioMute exec --no-startup-id $volumepath/volume -an -t $statuscmd -u $statussig mute
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+
+# start a web browser
+bindsym $mod+Shift+Return exec brave-browser 
 
 # kill focused window
 bindsym $mod+Shift+q kill
