@@ -1,11 +1,11 @@
 set $mod Mod4
-font pango:monospace 8
+font pango:monospace 8 
 
 # Start picom
 exec --no-startup-id picom 
 
-# Start nitrogen for wallpaper
-exec --no-startup-id nitrogen --restore
+# Start feh for wallpaper
+exec --no-startup-id ~/.fehbg
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -22,13 +22,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-set $volumepath ~/i3-volume
-set $statuscmd i3status
-set $statussig SIGUSR1
-set $volumestep 5
-bindsym XF86AudioRaiseVolume exec --no-startup-id $volumepath/volume -an -t $statuscmd -u $statussig up $volumestep
-bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume -an -t $statuscmd -u $statussig down $volumestep
-bindsym XF86AudioMute exec --no-startup-id $volumepath/volume -an -t $statuscmd -u $statussig mute
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -37,13 +31,16 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # start a web browser
-bindsym $mod+Shift+Return exec brave-browser 
+bindsym $mod+Shift+Return exec firefox 
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show run 
+
+# take screenshot
+bindsym --release $mod+z exec scrot -s -o '/tmp/%Y-%m-%d.png'
 
 # change focus
 bindsym $mod+h focus left
@@ -150,11 +147,10 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-        position top
-}
-
+#bar {
+#        status_command i3status
+#        position top
+#}
 
 # Set window style
 default_border pixel

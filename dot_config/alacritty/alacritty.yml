@@ -24,7 +24,7 @@
   #TERM: alacritty
 
 #Opacity
-background_opacity: 1 
+#background_opacity: 1 
 
 window:
   # Window dimensions (changes require restart)
@@ -70,7 +70,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  #opacity: 0.8
+  opacity: 0.8
 
   # Startup Mode (changes require restart)
   #
@@ -112,50 +112,17 @@ window:
 
 # Font configuration
 font:
-  # Normal (roman) font face
   normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
-    family: RobotoMono Nerd Font
-
-    # The `style` can be specified to pick a specific face.
+    family: Hack Nerd Font
     style: Regular
-
-  # Bold font face
   bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: RobotoMono Nerd Font
-
-    # The `style` can be specified to pick a specific face.
+    family: Hack Nerd Font
     style: Bold
-
-  # Italic font face
   italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: RobotoMono Nerd Font
-
-    # The `style` can be specified to pick a specific face.
+    family: Hack Nerd Font
     style: Italic
-
-  # Bold italic font face
   bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: RobotoMono Nerd Font
-
-    # The `style` can be specified to pick a specific face.
+    family: Hack Nerd Font
     style: Bold Italic
 
   # Point size
