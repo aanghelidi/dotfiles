@@ -53,3 +53,11 @@ if [ -f /usr/bin/nvim ]; then
     export EDITOR=nvim
     export VISUAL=nvim
 fi
+
+export PATH="/home/aangel/bin:$PATH"
+export PATH="/home/aangel/.poetry/bin:$PATH"
+
+
+source <(poetry completions bash)
+source <(kubectl completion bash)
+source <(k3d completion bash)
