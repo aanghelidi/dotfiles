@@ -31,7 +31,7 @@ export GOPATH="/home/aangel/go"
 export GOBIN="/home/aangel/go/bin"
 export PATH=$PATH:$GOBIN
 export PATH="/usr/local/bin:$PATH"
-export TERMINAL=alacritty
+export TERMINAL=foot
 export EDITOR=vi
 export VISUAL=vi
 
