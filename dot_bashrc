@@ -31,6 +31,7 @@ export GOPATH="/home/aangel/go"
 export GOBIN="/home/aangel/go/bin"
 export PATH=$PATH:$GOBIN
 export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
 export TERMINAL=foot
 export EDITOR=vi
 export VISUAL=vi
@@ -57,7 +58,8 @@ fi
 export PATH="/home/aangel/bin:$PATH"
 export PATH="/home/aangel/.poetry/bin:$PATH"
 
-
+source /etc/bash_completion
 source <(poetry completions bash)
 source <(kubectl completion bash)
 source <(k3d completion bash)
+source <(helm completion bash)
