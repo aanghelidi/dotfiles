@@ -1,0 +1,70 @@
+* {
+    font-family: NotoSans Nerd Font, sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    border-radius: 10px;
+    background: rgba(43, 48, 59, 0.5);
+    color: white;
+}
+
+#clock {
+    background-color: #a8e8f9;
+    padding: 3px;
+    border-radius: 10px;
+    color: black;
+}
+
+#network {
+    background-color: #00537a;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+#temperature {
+    background-color: #013c58;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+#cpu {
+    background-color: #f5a201;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+#memory {
+    background-color: #ffba42;
+    padding: 3px;
+    border-radius: 10px;
+    color: black;
+}
+
+#pulseaudio {
+    background-color: #ffd35b;
+    padding: 3px;
+    border-radius: 10px;
+    color: black;
+}
+
+#battery {
+    background-color: #64727D;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+#workspaces button {
+    padding: 3px 5px;
+    background: #64727D;
+    border-radius: 0px;
+    color: white;
+}
+
+#workspaces button.focused {
+    padding: 3px 5px;
+    border-radius: 0px;
+    background: #f77f00;
+}
+
+
