@@ -15,7 +15,7 @@ set $term foot
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 set $file_explorer nautilus 
-set $web_browser firefox 
+set $web_browser brave-browser 
 set $note_app Logseq 
 
 include /etc/sway/config-vars.d/*
@@ -23,7 +23,7 @@ include /etc/sway/config-vars.d/*
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/aangel/Pictures/work.png fill
+output * bg /home/aangel/Pictures/aurora.png fill
 #output * bg /home/aangel/Pictures/casual.jpg fill
 #
 # Example configuration:
@@ -223,12 +223,12 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Color focused
-client.focused #4c7899 #006d77 #ffffff #2e9ef4 #39ff14
+client.focused #4c7899 #006d77 #ffffff #2e9ef4 #BF616A
 
 # swaymsg
 
 exec swaymsg 'exec slack'
-exec swaymsg 'workspace 2; exec firefox'
+exec swaymsg 'workspace 2; exec brave-browser'
 exec swaymsg 'workspace 3; exec foot; exec tmux new -s main'
 exec swaymsg 'workspace 4; exec foot'
 exec swaymsg 'workspace 5; exec foot'
