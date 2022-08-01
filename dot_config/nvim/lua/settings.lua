@@ -15,8 +15,7 @@ opt.icon = true
 opt.history = 100
 opt.clipboard = 'unnamedplus'
 opt.termguicolors = true
-vim.g.mapleader = ' '
+vim.g.mapleader = ","
 
-cmd 'let g:gruvbox_transparent_bg = 1'
-cmd 'let g:gruvbox_constrast_dark = "hard"'
-cmd 'colorscheme gruvbox'
+cmd 'colorscheme nord'
+cmd ' highlight Normal guibg=black'

@@ -14,6 +14,7 @@ require('lsp.tsserver')
 require('lsp.gopls')
 require('lsp.bash')
 require('lsp.dockerls')
+require('lsp.ccls')
 
 -- Autocompletion / snippets
 require('plugins.luasnip')
@@ -27,3 +28,6 @@ require('plugins.lualine')
 
 -- Go Specific
 require('plugins.vimgo')
+
+-- Transparent 
+require('plugins.transparent')
