@@ -15,6 +15,8 @@ require('lsp.gopls')
 require('lsp.bash')
 require('lsp.dockerls')
 require('lsp.ccls')
+require('lsp.nimlsp')
+require('lsp.julials')
 
 -- Autocompletion / snippets
 require('plugins.luasnip')

@@ -17,5 +17,5 @@ opt.clipboard = 'unnamedplus'
 opt.termguicolors = true
 vim.g.mapleader = ","
 
-cmd 'colorscheme nord'
+cmd 'colorscheme gruvbox'
 cmd ' highlight Normal guibg=black'
