@@ -1,0 +1,78 @@
+direction: right 
+repository: Dotfiles repository {
+  icon: 'https://icons.terrastruct.com/dev/github.svg'
+  shape: image
+}
+machine: Development environment {
+  icon: 'https://icons.terrastruct.com/tech%2Flaptop.svg'
+}
+machine.home: Home directory {
+  icon: 'https://icons.terrastruct.com/essentials%2F245-folder.svg'
+}
+machine.home.dotfiles: {
+  icon: 'https://icons.terrastruct.com/essentials%2F245-folder.svg'
+}
+machine.home.dotfiles.vim: {
+  shape: document
+}
+machine.home.dotfiles.tmux: {
+  shape: document
+}
+machine.home.dotfiles.nvim: {
+  shape: document
+}
+developper: User {
+  shape: image
+  icon: 'https://icons.terrastruct.com/essentials%2F365-user.svg'
+}
+machine.home.vimrc: '.vimrc' {
+  shape: page
+}
+machine.home.tmuxconf: '.tmux.conf' {
+  shape: page
+}
+machine.home.config: '.config' {
+  icon: 'https://icons.terrastruct.com/essentials%2F245-folder.svg'
+}
+machine.home.config.nvimconfig: 'nvim' {
+  shape: document
+}
+machine.vim: {
+  icon: 'https://icons.terrastruct.com/dev%2Fvim.svg'
+  shape: image
+}
+machine.nvim: neovim {
+  icon: 'https://raw.githubusercontent.com/neovim/neovim.github.io/master/logos/neovim-logo.svg'
+  shape: image
+}
+
+machine: {
+  home: {
+    dotfiles: {
+      vim
+      tmux
+      nvim
+    }
+    vimrc
+    tmuxconf
+    config: {
+      nvimconfig
+    }
+  }
+  vim
+  tmux
+  nvim
+}
+
+repository <-> machine.home.dotfiles: sync with git (push/pull) {
+  style.animated: true
+}
+developper -> machine.home.dotfiles: uses git and stow to manage {
+  style.animated: true
+}
+machine.home.dotfiles.vim <-> machine.home.vimrc: symlink with stow
+machine.home.dotfiles.tmux <-> machine.home.tmuxconf: symlink with stow
+machine.home.dotfiles.nvim <-> machine.home.config.nvimconfig: symlink with stow
+machine.vim -> machine.home.vimrc: uses
+machine.tmux -> machine.home.tmuxconf: uses
+machine.nvim -> machine.home.config.nvimconfig: uses
