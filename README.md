@@ -12,4 +12,4 @@ Personal dotfiles management using [GNU Stow](https://www.gnu.org/software/stow/
   
 Below is a schema demonstrating such a setup for 3 stow directories of config files, `vim`, `neovim` and `tmux`:
 
-![stow schema]()
+![stow schema](https://github.com/aanghelidi/dotfiles/blob/master/docs/dotfiles.svg)
