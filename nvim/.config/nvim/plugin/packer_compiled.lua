@@ -109,20 +109,10 @@ _G.packer_plugins = {
     path = "/home/aangel/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
-  ["d2-vim"] = {
+  gruvbox = {
     loaded = true,
-    path = "/home/aangel/.local/share/nvim/site/pack/packer/start/d2-vim",
-    url = "https://github.com/terrastruct/d2-vim"
-  },
-  everforest = {
-    loaded = true,
-    path = "/home/aangel/.local/share/nvim/site/pack/packer/start/everforest",
-    url = "https://github.com/sainnhe/everforest"
-  },
-  ["glow.nvim"] = {
-    loaded = true,
-    path = "/home/aangel/.local/share/nvim/site/pack/packer/start/glow.nvim",
-    url = "https://github.com/ellisonleao/glow.nvim"
+    path = "/home/aangel/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/morhetz/gruvbox"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -184,11 +174,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/aangel/.local/share/nvim/site/pack/packer/start/vim-terraform",
     url = "https://github.com/hashivim/vim-terraform"
-  },
-  ["which-key.nvim"] = {
-    loaded = true,
-    path = "/home/aangel/.local/share/nvim/site/pack/packer/start/which-key.nvim",
-    url = "https://github.com/folke/which-key.nvim"
   }
 }
 

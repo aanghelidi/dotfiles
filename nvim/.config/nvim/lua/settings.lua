@@ -1,4 +1,4 @@
-local opt = vim.opt -- to set options
+local opt = vim.opt
 local cmd = vim.cmd
 
 opt.number = true
@@ -12,9 +12,8 @@ opt.expandtab = true
 opt.swf = false
 opt.wb = false
 opt.icon = true
-opt.history = 100
+opt.history = 1000
 opt.clipboard = 'unnamedplus'
 opt.termguicolors = true
 vim.g.mapleader = ','
 opt.mouse = 'a'
-opt.background = 'dark'
