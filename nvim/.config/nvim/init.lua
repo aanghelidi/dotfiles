@@ -11,6 +11,8 @@ require('lsp.tsserver')
 require('lsp.gopls')
 require('lsp.bash')
 require('lsp.dockerls')
+-- Transparent plugin setup
+require('plugins.transparent')
 -- Theme
 require('plugins.gruvbox')
 -- Autocompletion
@@ -24,6 +26,6 @@ require('plugins.telescope')
 -- Go Specific
 require('plugins.vimgo')
 -- Copilot
---require('plugins.copilot')
+require('plugins.copilot')
 -- Status line
 require('plugins.lualine')

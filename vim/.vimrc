@@ -10,24 +10,16 @@ set softtabstop=2
 set shiftwidth=2
 set smartindent
 set smarttab
-
-syntax on
-
+"syntax on
 au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4
-
-let mapleader = ","
-
+"let mapleader = ","
 " better use of arrow keys, number increment/decrement
 nnoremap <up> <C-a>
 nnoremap <down> <C-x>
-
 " Better page down and page up
 noremap <C-n> <C-d>
 noremap <C-p> <C-b>
-
 set pastetoggle=<F2>
-
-
 set expandtab
 set nobackup
 set noswapfile
