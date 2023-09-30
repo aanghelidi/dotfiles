@@ -11,21 +11,19 @@ require('lsp.tsserver')
 require('lsp.gopls')
 require('lsp.bash')
 require('lsp.dockerls')
--- Transparent plugin setup
-require('plugins.transparent')
--- Theme
+---- Theme
 require('plugins.gruvbox')
--- Autocompletion
+---- Autocompletion
 require('plugins.nvim_cmp')
--- Neogen
+---- Neogen
 require('plugins.neogen')
--- Treesitter
+---- Treesitter
 require('plugins.treesitter')
--- Telescope
+---- Telescope
 require('plugins.telescope')
--- Go Specific
+---- Go Specific
 require('plugins.vimgo')
--- Copilot
+---- Copilot
 require('plugins.copilot')
--- Status line
+---- Status line
 require('plugins.lualine')

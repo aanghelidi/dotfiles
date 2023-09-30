@@ -6,7 +6,7 @@ vim.api.nvim_set_keymap("n", "<Leader>df", ":Neogen<CR>", opts)
 vim.api.nvim_set_keymap("n", "<Leader>dt", ":lua require('neogen').generate({ type = 'type' })<CR>", opts)
 vim.api.nvim_set_keymap("i", "<C-l>", ":lua require('neogen').jump_next<CR>", opts)
 vim.api.nvim_set_keymap("i", "<C-h>", ":lua require('neogen').jump_prev<CR>", opts)
-vim.api.nvim_set_keymap("n", "<Leader>ds", ":lua require('neogen').generate({ annotation_convention = { python = 'numpydoc' }})<CR>", opts)
+vim.api.nvim_set_keymap("n", "<Leader>ds", ":lua require('neogen').generate({ annotation_convention = { python = 'google_docstrings' }})<CR>", opts)
 
 
 require('neogen').setup {
@@ -14,7 +14,7 @@ require('neogen').setup {
     languages = {
         python = {
             template = {
-                annotation_convention = 'numpydoc',
+                annotation_convention = 'google_docstrings',
             }
         },
     }
