@@ -9,12 +9,11 @@ local M = {
   "hrsh7th/nvim-cmp",
   "saadparwaiz1/cmp_luasnip",
   "L3MON4D3/LuaSnip",
-  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate", event = { "BufReadPost", "BufNewFile" }},
   {"nvim-telescope/telescope.nvim", dependencies = { 'nvim-lua/plenary.nvim' }},
   "nvim-telescope/telescope-fzy-native.nvim",
   {"nvim-lualine/lualine.nvim", dependencies = { "kyazdani42/nvim-web-devicons" }},
   {"fatih/vim-go", build = ":GoUpdateBinaries"},
-  {"danymat/neogen", dependencies = {"nvim-treesitter/nvim-treesitter"}},
 }
 
 return { M }

@@ -15,8 +15,6 @@ require('lsp.dockerls')
 require('plugins.gruvbox')
 ---- Autocompletion
 require('plugins.nvim_cmp')
----- Neogen
-require('plugins.neogen')
 ---- Treesitter
 require('plugins.treesitter')
 ---- Telescope
