@@ -14,6 +14,7 @@ local M = {
   "nvim-telescope/telescope-fzy-native.nvim",
   {"nvim-lualine/lualine.nvim", event = "VeryLazy", dependencies = { "kyazdani42/nvim-web-devicons" }},
   {"fatih/vim-go", build = ":GoUpdateBinaries"},
+  {"mfussenegger/nvim-lint", event = "BufReadPost"},
 }
 
 return { M }
