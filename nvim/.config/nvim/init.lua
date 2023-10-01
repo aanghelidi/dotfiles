@@ -12,7 +12,7 @@ require('lsp.gopls')
 require('lsp.bash')
 require('lsp.dockerls')
 -- Linting
-require('plugins.lint')
+require('plugins.ale')
 ---- Theme
 require('plugins.gruvbox')
 ---- Autocompletion
