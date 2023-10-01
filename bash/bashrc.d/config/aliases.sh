@@ -9,3 +9,5 @@ alias egrep='egrep --color=auto'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
+
+command -v newsboat >/dev/null 2>&1 && alias nb='newsboat'
