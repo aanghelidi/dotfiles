@@ -30,3 +30,32 @@ nnoremap <up> <C-a>
 nnoremap <down> <C-x>
 noremap <C-n> <C-d>
 noremap <C-p> <C-b>
+
+" Golang setup 
+if executable('goimports')
+  fun! s:GoFmt()
+    let l:pos = getcurpos()
+    silent execute '%!gofmt -s'
+    call setpos('.', l:pos)
+  endfun
+  autocmd FileType go autocmd BufWritePre <buffer> call s:GoFmt()
+endif
+
+" Python setup
+if executable('black')
+  fun! s:Black()
+    let l:pos = getcurpos()
+    silent execute '%!black -q -'
+    call setpos('.', l:pos)
+  endfun
+  autocmd FileType python autocmd BufWritePre <buffer> call s:Black()
+endif
+
+if executable('isort')
+  fun! s:Isort()
+    let l:pos = getcurpos()
+    silent execute '%!isort --profile black -'
+    call setpos('.', l:pos)
+  endfun
+  autocmd FileType python autocmd BufWritePre <buffer> call s:Isort()
+endif
