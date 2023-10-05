@@ -14,6 +14,7 @@ vim.g.ale_sign_warning = '⚠️'
 -- Linters
 vim.g.ale_linters = {
   python = {'mypy', 'ruff'},
+  go = {'golangci-lint'},
   sh = {'shellcheck'},
 }
 -- Fixers
