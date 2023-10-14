@@ -1,0 +1,79 @@
+" Core settings
+set nocp
+filetype plugin on
+set autoindent
+set autowrite
+set number
+set textwidth=120
+set showmode
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2 
+set smartindent
+set smarttab
+syntax on 
+filetype plugin indent on
+set pastetoggle=<F2>
+set expandtab
+set nobackup 
+set noswapfile 
+set nowritebackup
+set icon
+set hlsearch
+set incsearch
+set hidden
+set history=100
+set ttyfast
+set wildmenu
+let mapleader = ","
+nnoremap <up> <C-a>
+nnoremap <down> <C-x>
+noremap <C-n> <C-d>
+noremap <C-p> <C-b>
+
+" Golang setup 
+if executable('goimports')
+  fun! s:GoFmt()
+    let l:pos = getcurpos()
+    silent execute '%!gofmt -s'
+    call setpos('.', l:pos)
+  endfun
+  autocmd FileType go autocmd BufWritePre <buffer> call s:GoFmt()
+endif
+
+" Python setup
+if executable('black')
+  fun! s:Black()
+    let l:pos = getcurpos()
+    silent execute '%!black -q -'
+    call setpos('.', l:pos)
+  endfun
+  autocmd FileType python autocmd BufWritePre <buffer> call s:Black()
+endif
+
+if executable('isort')
+  fun! s:Isort()
+    let l:pos = getcurpos()
+    silent execute '%!isort --profile black -'
+    call setpos('.', l:pos)
+  endfun
+  autocmd FileType python autocmd BufWritePre <buffer> call s:Isort()
+endif
+
+
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
+set guioptions-=b
+set guioptions+=d
+set guioptions+=a
+
+colorscheme habamax
+set guifont=JetBrains\ Mono\ Nerd\ Font\ Mono\ 10
+
+if has('unnamedplus')
+  set clipboard= 'unnamedplus'
+endif
