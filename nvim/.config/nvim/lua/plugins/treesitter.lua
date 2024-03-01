@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {"bash", "cmake", "comment", "dockerfile", "go", "html", "javascript", "markdown", "python", "regex", "toml", "tsx", "typescript", "yaml", "lua" },
+  ensure_installed = {"bash", "cmake", "comment", "dockerfile", "go", "html", "javascript", "markdown", "python", "regex", "toml", "tsx", "typescript", "yaml", "lua", "ruby", "awk" },
   auto_install = true,
   highlight = {
     enable = true,

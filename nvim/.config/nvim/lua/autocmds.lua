@@ -22,3 +22,14 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
   command = "set filetype=dockerfile"
 })
 
+local sql_group_id = vim.api.nvim_create_augroup("SQL", {
+  clear = true
+})
+
+if vim.fn.executable('sqlformat') then
+  vim.api.nvim_create_autocmd({"BufWritePre"}, {
+    group = sql_group_id,
+    pattern = "*.sql",
+    command = "silent execute '%!sqlformat -i lower -k upper -r -'"
+  })
+end

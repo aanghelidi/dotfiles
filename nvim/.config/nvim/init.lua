@@ -11,8 +11,7 @@ require('lsp.tsserver')
 require('lsp.gopls')
 require('lsp.bash')
 require('lsp.dockerls')
--- Linting
-require('plugins.ale')
+require('lsp.zls')
 ---- Theme
 require('plugins.gruvbox')
 ---- Autocompletion
