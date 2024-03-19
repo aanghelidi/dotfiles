@@ -1,32 +1,110 @@
 " Core settings
 set nocp
-filetype plugin on
 set autoindent
+set autoread
 set autowrite
-set number
-set textwidth=120
-set showmode
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2 
-set smartindent
-set smarttab
-syntax on 
-filetype plugin indent on
-set pastetoggle=<F2>
 set expandtab
+set hidden
+set history=100
+set hlsearch
+set icon
+set incsearch
 set nobackup 
 set noswapfile 
 set nowritebackup
-set icon
-set hlsearch
-set incsearch
-set hidden
-set history=100
+set number
+set pastetoggle=<F2>
+set shiftwidth=2 
+set showmode
+set smartindent
+set smarttab
+set softtabstop=2
+set tabstop=2
+set textwidth=120
+set termguicolors
 set ttyfast
 set wildmenu
+syntax on 
+filetype plugin indent on
+set background=dark
+colorscheme retrobox
+if has('unnamedplus')
+  set clipboard^=unnamedplus
+endif
+
+" Plugins
+call plug#begin()
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'github/copilot.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'dense-analysis/ale'
+if v:version < 901
+  Plug 'editorconfig/editorconfig-vim'
+endif
+call plug#end()
+
+" Copilot
+let g:copilot_filetypes = {
+  \ 'yaml': 1,
+  \ 'markdown': 1,
+  \ 'json': 1,
+  \ 'toml': 1,
+  \ 'txt': 1,
+  \ }
+
+" LSP servers
+if executable('pyright-langserver')
+    au User lsp_setup call lsp#register_server({
+      \  'name': 'pyright',
+      \  'cmd': {server_info->['pyright-langserver', '--stdio']},
+      \  'whitelist': ['python'],
+      \  })
+endif
+
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    nnoremap gd :LspDefinition<CR>
+    nnoremap gD :LspDeclaration<CR>
+    nnoremap K :LspHover<CR>
+    nnoremap gi :LspImplementation<CR>
+    nnoremap gr :LspReferences<CR>
+    nnoremap <leader>rn :LspRename<CR>
+    nnoremap <leader>ca :LspCodeAction<CR>
+    nnoremap [d <plug>(lsp-previous-diagnostic)
+    nnoremap ]d <plug>(lsp-next-diagnostic)
+endfunction
+
+augroup lsp_install
+    au!
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
+" Ale configuration
+let g:ale_completion_enabled = 0
+let g:ale_completion_autoimport = 0
+let g:ale_fix_on_save = 1
+let g:ale_history_enabled = 0
+let g:ale_history_log_output = 0
+let g:ale_linters_explicit = 1
+
+" Mappings
 let mapleader = ","
 nnoremap <up> <C-a>
 nnoremap <down> <C-x>
 noremap <C-n> <C-d>
 noremap <C-p> <C-b>
+
+" Easier Completions
+inoremap <C-F> <C-X><C-F>
+inoremap <C-Space> <C-X><C-O>
+inoremap <C-L> <C-X><C-L>
+
+" FZF
+nnoremap <Leader>ff :Files<CR>
+nnoremap <Leader>gf :GFiles<CR>
+nnoremap <Leader>rg :RG<CR>
+nnoremap <Leader>fb :Buffers<CR>
+nnoremap <Leader>fh :Helptags<CR>
+nnoremap <Leader>gs :BLines<CR>
