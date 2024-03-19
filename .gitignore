@@ -1,2 +1,4 @@
 **/*.lock
 **/*.netrwhist
+pack
+plugged
