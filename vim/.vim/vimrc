@@ -1,93 +1,48 @@
 " Core settings
-set nocp
+set nocompatible
+
 set autoindent
 set autoread
 set autowrite
+set backspace=0
+set display=truncate
 set expandtab
 set hidden
-set history=100
+set history=200
 set hlsearch
 set icon
 set incsearch
+set mouse=a
 set nobackup 
+set nofixendofline
+set nofoldenable
+set noshowcmd
+set showmode
 set noswapfile 
 set nowritebackup
-set number
 set pastetoggle=<F2>
+set relativenumber
+set ruler
 set shiftwidth=2 
-set showmode
 set smartindent
 set smarttab
 set softtabstop=2
 set tabstop=2
-set textwidth=120
 set termguicolors
+set textwidth=120
+set ttimeout
+set ttimeoutlen=100
 set ttyfast
 set wildmenu
+
 syntax on 
 filetype plugin indent on
 set background=dark
 colorscheme retrobox
+
 if has('unnamedplus')
   set clipboard^=unnamedplus
 endif
-
-" Plugins
-call plug#begin()
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'github/copilot.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'dense-analysis/ale'
-if v:version < 901
-  Plug 'editorconfig/editorconfig-vim'
-endif
-call plug#end()
-
-" Copilot
-let g:copilot_filetypes = {
-  \ 'yaml': 1,
-  \ 'markdown': 1,
-  \ 'json': 1,
-  \ 'toml': 1,
-  \ 'txt': 1,
-  \ }
-
-" LSP servers
-if executable('pyright-langserver')
-    au User lsp_setup call lsp#register_server({
-      \  'name': 'pyright',
-      \  'cmd': {server_info->['pyright-langserver', '--stdio']},
-      \  'whitelist': ['python'],
-      \  })
-endif
-
-function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
-    setlocal signcolumn=yes
-    nnoremap gd :LspDefinition<CR>
-    nnoremap gD :LspDeclaration<CR>
-    nnoremap K :LspHover<CR>
-    nnoremap gi :LspImplementation<CR>
-    nnoremap gr :LspReferences<CR>
-    nnoremap <leader>rn :LspRename<CR>
-    nnoremap <leader>ca :LspCodeAction<CR>
-    nnoremap [d <plug>(lsp-previous-diagnostic)
-    nnoremap ]d <plug>(lsp-next-diagnostic)
-endfunction
-
-augroup lsp_install
-    au!
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
-
-" Ale configuration
-let g:ale_completion_enabled = 0
-let g:ale_completion_autoimport = 0
-let g:ale_fix_on_save = 1
-let g:ale_history_enabled = 0
-let g:ale_history_log_output = 0
-let g:ale_linters_explicit = 1
 
 " Mappings
 let mapleader = ","
@@ -98,8 +53,46 @@ noremap <C-p> <C-b>
 
 " Easier Completions
 inoremap <C-F> <C-X><C-F>
-inoremap <C-Space> <C-X><C-O>
 inoremap <C-L> <C-X><C-L>
+
+" Quickfix list
+function! QuickFixToggle()
+  exe getwininfo()->filter('v:val.quickfix')->empty() ? 'copen' : 'cclose'
+endfunction
+nnoremap <leader>cc :call QuickFixToggle()<CR>
+
+" Location list
+function! LocationListToggle()
+  exe getwininfo()->filter('v:val.loclist')->empty() ? 'lopen' : 'lclose'
+endfunction
+nnoremap <leader>ll :call LocationListToggle()<CR>
+
+" Plugins
+if '~/.vim/autoload/plug.vim'->glob()->empty()
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs 
+               \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+call plug#begin()
+Plug 'yegappan/lsp'
+Plug 'girishji/vimcomplete'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+Plug 'github/copilot.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+call plug#end()
+
+" Copilot
+let g:copilot_filetypes = {
+  \ 'yaml': 1,
+  \ 'markdown': 1,
+  \ 'json': 1,
+  \ 'toml': 1,
+  \ 'txt': 1,
+  \ 'vim': 0,
+  \ }
 
 " FZF
 nnoremap <Leader>ff :Files<CR>
@@ -108,3 +101,104 @@ nnoremap <Leader>rg :RG<CR>
 nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fh :Helptags<CR>
 nnoremap <Leader>gs :BLines<CR>
+
+" LSP servers
+let lspOpts = #{
+  \   aleSupport: v:false,
+  \   autoComplete: v:true,
+  \   autoHighlight: v:false,
+  \   showSignature: v:true,
+  \}
+autocmd User LspSetup call LspOptionsSet(lspOpts)
+autocmd FileType python autocmd BufWritePre <buffer> LspFormat
+
+" Python
+let pythonlspServers = [#{
+  \	  name: 'jedi',
+  \	  filetype: 'python',
+  \	  path: $HOME.'/.local/bin/jedi-language-server',
+  \	  args: [],
+  \	  features: #{
+  \	    diagnostics: v:false,
+  \	    codeAction: v:false,
+  \   }
+  \ },
+  \ #{
+  \	  name: 'ruff-lsp',
+  \	  filetype: 'python',
+  \	  path: $HOME.'/.local/bin/ruff-lsp',
+  \	  args: []
+  \ }]
+
+autocmd User LspSetup call LspAddServer(pythonlspServers)
+
+" Bash / sh
+let bashlspServer = [#{
+  \	  name: 'bash-language-server',
+  \	  filetype: ['bash', 'sh'],
+  \	  path: '/usr/local/bin/bash-language-server',
+  \	  args: ['start']
+  \ }]
+autocmd User LspSetup call LspAddServer(bashlspServer)
+
+if executable('shfmt')
+  function! FormatSh()
+    let l:save_cursor = getcurpos()
+    silent execute '%!shfmt'
+    call setpos('.', save_cursor)
+  endfunction
+  augroup shFormatting
+    autocmd!
+    autocmd Filetype bash,sh autocmd BufWrite <buffer> call FormatSh()
+  augroup END
+endif
+
+" Docker 
+let dockerlspServer = [#{
+  \	  name: 'docker-langserver',
+  \	  filetype: 'dockerfile',
+  \	  path: '/usr/local/bin/docker-langserver',
+  \	  args: ['--stdio']
+  \ }]
+autocmd User LspSetup call LspAddServer(dockerlspServer)
+
+" Go 
+let golspServer = [#{
+  \	  name: 'gopls',
+  \	  filetype: 'go',
+  \	  path: $HOME.'/go/bin/gopls',
+  \	  args: ['serve']
+  \ }]
+autocmd User LspSetup call LspAddServer(golspServer)
+let g:go_fmt_command = 'goimports'
+let g:go_template_autocreate = 0
+
+" vimcomplete
+let options = #{
+  \   completor: #{ recency: v:false, alwaysOn: v:true, kindDisplayType: 'icon' },
+  \   lsp: #{ enable: v:true, maxCount: 10 },
+  \   buffer: #{ enable: v:false },
+  \   abbrev: #{ enable: v:false },
+  \   dictionary: #{ enable: v:false },
+  \   omnifunc: #{ enable: v:true },
+  \   vsnip: #{ enable: v:false },
+  \   vimscript: #{ enable: v:false },
+  \   ngram: #{ enable: v:false },
+  \}
+autocmd VimEnter * call g:VimCompleteOptionsSet(options)
+
+" LSP mappings
+nnoremap gd :LspGotoDefinition<CR>
+nnoremap gD :LspGotoDeclaration<CR>
+augroup lsp_hover_mapping
+  autocmd!
+  autocmd Filetype python,bash,sh,dockerfile,go nnoremap K :LspHover<CR>
+augroup END
+nnoremap gi :LspGotoImpl<CR>
+nnoremap gr :LspShowReferences<CR>
+nnoremap <leader>rn :LspRename<CR>
+nnoremap <leader>ca :LspCodeAction<CR>
+nnoremap <leader>ds :LspDiag show<CR>
+nnoremap [d :LspDiag prev<CR>
+nnoremap ]d :LspDiag next<CR>
+nnoremap <leader>dd :LspDiag show<CR>
