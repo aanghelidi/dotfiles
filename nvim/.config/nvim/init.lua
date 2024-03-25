@@ -11,18 +11,17 @@ require('lsp.tsserver')
 require('lsp.gopls')
 require('lsp.bash')
 require('lsp.dockerls')
-require('lsp.zls')
+-- Fzf
+require('plugins.fzf')
 ---- Theme
-require('plugins.gruvbox')
+require('plugins.colorscheme')
 ---- Autocompletion
 require('plugins.nvim_cmp')
 ---- Treesitter
 require('plugins.treesitter')
----- Telescope
-require('plugins.telescope')
 ---- Go Specific
 require('plugins.vimgo')
 ---- Copilot
 require('plugins.copilot')
 ---- Status line
-require('plugins.lualine')
+require('plugins.statusline')
