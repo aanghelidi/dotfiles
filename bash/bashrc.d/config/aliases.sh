@@ -11,3 +11,6 @@ alias la='ls -A'
 alias l='ls -CF'
 
 command -v newsboat >/dev/null 2>&1 && alias nb='newsboat'
+
+alias fv='fzf --print0 | xargs -0 -o vim'
+
