@@ -75,7 +75,6 @@ endif
 
 call plug#begin()
 Plug 'yegappan/lsp'
-Plug 'girishji/vimcomplete'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
@@ -172,20 +171,6 @@ let golspServer = [#{
 autocmd User LspSetup call LspAddServer(golspServer)
 let g:go_fmt_command = 'goimports'
 let g:go_template_autocreate = 0
-
-" vimcomplete
-let options = #{
-  \   completor: #{ recency: v:false, alwaysOn: v:true, kindDisplayType: 'icon' },
-  \   lsp: #{ enable: v:true, maxCount: 10 },
-  \   buffer: #{ enable: v:false },
-  \   abbrev: #{ enable: v:false },
-  \   dictionary: #{ enable: v:false },
-  \   omnifunc: #{ enable: v:true },
-  \   vsnip: #{ enable: v:false },
-  \   vimscript: #{ enable: v:false },
-  \   ngram: #{ enable: v:false },
-  \}
-autocmd VimEnter * call g:VimCompleteOptionsSet(options)
 
 " LSP mappings
 nnoremap gd :LspGotoDefinition<CR>
