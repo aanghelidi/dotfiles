@@ -23,5 +23,3 @@ require('plugins.treesitter')
 require('plugins.vimgo')
 ---- Copilot
 require('plugins.copilot')
----- Status line
-require('plugins.statusline')

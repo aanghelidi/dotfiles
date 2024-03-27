@@ -18,8 +18,6 @@ local M = {
     }},
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate", event = { "BufReadPost", "BufNewFile" }},
 
-  {'echasnovski/mini.nvim', version = false},
-
   {"fatih/vim-go", build = ":GoUpdateBinaries"},
 }
 

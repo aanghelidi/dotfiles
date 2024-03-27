@@ -17,3 +17,4 @@ opt.clipboard = 'unnamedplus'
 opt.termguicolors = true
 vim.g.mapleader = ','
 opt.mouse = 'a'
+opt.laststatus = 0
