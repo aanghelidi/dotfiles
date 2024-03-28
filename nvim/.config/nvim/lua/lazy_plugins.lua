@@ -4,6 +4,7 @@ local M = {
     "ibhagwan/fzf-lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
+  {"TabbyML/vim-tabby"},
   {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",

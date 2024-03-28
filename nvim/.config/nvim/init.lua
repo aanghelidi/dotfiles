@@ -4,6 +4,8 @@ require('settings')
 require('autocmds')
 -- Plugins
 require('plugins')
+-- Tabby
+require('plugins.tabby')
 -- LSP
 require('lsp.mappings')
 require('lsp.pyright')
