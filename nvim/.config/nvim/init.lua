@@ -21,5 +21,3 @@ require('plugins.nvim_cmp')
 require('plugins.treesitter')
 ---- Go Specific
 require('plugins.vimgo')
----- Copilot
-require('plugins.copilot')

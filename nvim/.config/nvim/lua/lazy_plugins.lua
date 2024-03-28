@@ -1,6 +1,5 @@
 local M = {
   {"neovim/nvim-lspconfig"},
-  {"zbirenbaum/copilot.lua"},
   {
     "ibhagwan/fzf-lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
