@@ -78,20 +78,9 @@ Plug 'yegappan/lsp'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-Plug 'github/copilot.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
-
-" Copilot
-let g:copilot_filetypes = {
-  \ 'yaml': 1,
-  \ 'markdown': 1,
-  \ 'json': 1,
-  \ 'toml': 1,
-  \ 'txt': 1,
-  \ 'vim': 0,
-  \ }
 
 " FZF
 nnoremap <Leader>ff :Files<CR>
