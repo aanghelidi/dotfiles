@@ -8,7 +8,7 @@ require('plugins')
 require('plugins.tabby')
 -- LSP
 require('lsp.mappings')
-require('lsp.pyright')
+require('lsp.jedi')
 require('lsp.tsserver')
 require('lsp.gopls')
 require('lsp.bash')
