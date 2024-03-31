@@ -9,6 +9,7 @@ require('plugins.tabby')
 -- LSP
 require('lsp.mappings')
 require('lsp.jedi')
+require('lsp.ruff')
 require('lsp.tsserver')
 require('lsp.gopls')
 require('lsp.bash')
