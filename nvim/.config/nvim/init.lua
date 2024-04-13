@@ -6,7 +6,7 @@ require('autocmds')
 require('plugins')
 -- LSP
 require('lsp.mappings')
-require('lsp.jedi')
+require('lsp.pyright')
 require('lsp.ruff')
 require('lsp.tsserver')
 require('lsp.gopls')
