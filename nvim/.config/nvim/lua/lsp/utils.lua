@@ -19,9 +19,9 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', ':Telescope lsp_references<CR>', bufopts)
-  vim.keymap.set('n', '<Leader>f', vim.lsp.buf.formatting, bufopts)
+  vim.keymap.set('n', 'gq', vim.lsp.buf.formatting, bufopts)
 end
 
 return {
-  on_attach = on_attach,
+  on_attach = on_attach
 }

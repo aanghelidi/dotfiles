@@ -16,9 +16,11 @@ local M = {
       "L3MON4D3/LuaSnip",
     }},
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate", event = { "BufReadPost", "BufNewFile" }},
-  {"EdenEast/nightfox.nvim"},
-
-  {"fatih/vim-go", build = ":GoUpdateBinaries"},
+  {"ellisonleao/gruvbox.nvim", priority = 1000},
+  {
+      'nvim-lualine/lualine.nvim',
+      dependencies = { 'nvim-tree/nvim-web-devicons' }
+  }
 }
 
 return { M }

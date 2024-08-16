@@ -7,6 +7,7 @@ require('plugins')
 -- LSP
 require('lsp.mappings')
 require('lsp.pyright')
+require('lsp.luals')
 require('lsp.ruff')
 require('lsp.tsserver')
 require('lsp.gopls')
@@ -18,7 +19,7 @@ require('plugins.fzf')
 require('plugins.colorscheme')
 ---- Autocompletion
 require('plugins.nvim_cmp')
----- Treesitter
+---- Tree-sitter
 require('plugins.treesitter')
----- Go Specific
-require('plugins.vimgo')
+-- Lualine
+require('plugins.lualine')
