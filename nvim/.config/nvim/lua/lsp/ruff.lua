@@ -2,7 +2,7 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local on_attach = function(client, bufnr)
 
-  if client.name == 'ruff_lsp' then
+  if client.name == 'ruff' then
     client.server_capabilities.hoverProvider = false
   end
 
@@ -13,7 +13,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<Leader>f', vim.lsp.buf.formatting, bufopts)
 end
 
-require('lspconfig')['ruff_lsp'].setup {
+require('lspconfig')['ruff'].setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
