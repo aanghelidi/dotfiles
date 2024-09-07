@@ -1,0 +1,97 @@
+{
+  "ui_font_size": 13,
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_size": 13,
+  "buffer_font_weight": 450,
+  "buffer_line_height": "comfortable",
+  "current_line_highlight": "line",
+  "cursor_blink": false,
+  "scrollbar": {
+    "show": "never"
+  },
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": false
+  },
+  "tabs": {
+    "close_position": "right",
+    "file_icons": true,
+    "git_status": true
+  },
+  "enable_language_server": true,
+  "ensure_final_newline_on_save": true,
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": false
+  },
+  "use_autoclose": false,
+  "remove_trailing_whitespace_on_save": true,
+  "soft_wrap": "preferred_line_length",
+  "show_wrap_guides": false,
+  "show_inline_completions": true,
+  "project_panel": {
+    "button": true,
+    "default_width": 240,
+    "dock": "left",
+    "file_icons": true,
+    "folder_icons": true,
+    "git_status": true,
+    "indent_size": 15,
+    "auto_reveal_entries": true,
+    "auto_fold_dirs": true,
+    "scrollbar": {
+      "show": "never"
+    }
+  },
+  "assistant": {
+    "enabled": true,
+    "button": true,
+    "dock": "right",
+    "provider": { "name": "ollama" },
+    "version": "1"
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "Ayu Light",
+    "dark": "Ayu Dark"
+  },
+  "vim_mode": true,
+  "format_on_save": "on",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["pyright", "ruff"],
+      "format_on_save": "on",
+      "preferred_line_length": 120,
+      "formatter": [
+        {
+          "code_actions": {
+            "source.organizeImports.ruff": true,
+            "source.fixAll.ruff": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    }
+  },
+  "lsp": {
+    "pyright": {
+      "settings": {
+        "python.analysis": {
+          "diagnosticMode": "workspace",
+          "typeCheckingMode": "standard"
+        },
+        "python": {
+          "pythonPath": ".venv/bin/python"
+        }
+      }
+    }
+  }
+}
