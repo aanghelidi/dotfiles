@@ -1,10 +1,10 @@
 compile-bytecode = true
 native-tls = true
 python-downloads = "manual"
+python-preference = "managed"
 
 [pip]
 emit-build-options = true
 emit-index-annotation = true
 emit-index-url = true
-edit-marker-expression = true
 generate-hashes = true
