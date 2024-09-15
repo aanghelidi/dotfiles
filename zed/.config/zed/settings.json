@@ -28,6 +28,7 @@
   "remove_trailing_whitespace_on_save": true,
   "soft_wrap": "preferred_line_length",
   "show_wrap_guides": false,
+  "show_completions_on_input": false,
   "show_inline_completions": true,
   "project_panel": {
     "button": true,
@@ -45,10 +46,14 @@
   },
   "assistant": {
     "enabled": true,
+    "default_model": {
+      "provider": "ollama",
+      "model": "llama3.1:8b-instruct-q8_0"
+    },
     "button": true,
     "dock": "right",
-    "provider": { "name": "ollama" },
-    "version": "1"
+    "provider": null,
+    "version": "2"
   },
   "theme": {
     "mode": "dark",
@@ -79,6 +84,14 @@
           }
         }
       ]
+    },
+    "HTML": {
+      "language_servers": [
+        "vscode-html-languageservice",
+        "tailwindcss-language-server"
+      ],
+      "format_on_save": "on",
+      "preferred_line_length": 120
     }
   },
   "lsp": {

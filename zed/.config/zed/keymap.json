@@ -1,0 +1,42 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      // "j k": ["workspace::SendKeystrokes", "escape"]
+    }
+  },
+  {
+    "context": "editor && vimcontrol && !vimwaiting && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work in normal & visual mode
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work only in normal mode
+      ", t a": "workspace::ToggleRightDock",
+      ", t e": "workspace::ToggleLeftDock",
+      ", d s": "diagnostics::Deploy",
+      ", f f": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      // visual, visual line & visual block modes
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work in insert mode
+    }
+  }
+]
