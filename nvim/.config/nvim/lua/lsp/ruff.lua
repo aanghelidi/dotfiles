@@ -6,14 +6,13 @@ local on_attach = function(client, bufnr)
     client.server_capabilities.hoverProvider = false
   end
 
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
   vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', '<Leader>f', vim.lsp.buf.formatting, bufopts)
+  vim.keymap.set('n', '<Leader>bf', vim.lsp.buf.format, bufopts)
 end
 
 require('lspconfig')['ruff'].setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
+

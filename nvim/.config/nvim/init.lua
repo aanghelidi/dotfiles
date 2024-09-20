@@ -13,13 +13,17 @@ require('lsp.tsserver')
 require('lsp.gopls')
 require('lsp.bash')
 require('lsp.dockerls')
+require('lsp.html')
+require('lsp.tailwind')
 -- Fzf
 require('plugins.fzf')
 ---- Theme
 require('plugins.colorscheme')
+---- Icons
+require('plugins.icons')
 ---- Autocompletion
 require('plugins.nvim_cmp')
 ---- Tree-sitter
 require('plugins.treesitter')
--- Lualine
-require('plugins.lualine')
+---- Statusline
+require('plugins.statusline')
