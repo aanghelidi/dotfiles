@@ -1,5 +1,5 @@
 require('mini.completion').setup({
-  delay = { completion = 1000, info = 100, signature = 50 },
+  delay = { completion = 100, info = 100, signature = 50 },
   window = {
     info= { height = 25, width = 80, border = 'none' },
     signature = { height = 25, width = 80, border = 'none' },
