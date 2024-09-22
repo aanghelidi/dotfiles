@@ -1,5 +1,3 @@
-local exec = vim.api.nvim_exec
-
 -- Python
 local python_group_id = vim.api.nvim_create_augroup("Python", {
   clear = true
