@@ -1,5 +1,5 @@
 -- Ruff lsp setup
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 local on_attach = function(client, bufnr)
 
   if client.name == 'ruff' then

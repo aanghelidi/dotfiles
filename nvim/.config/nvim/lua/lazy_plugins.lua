@@ -1,21 +1,11 @@
 local M = {
   { "neovim/nvim-lspconfig" },
-  { "ibhagwan/fzf-lua",     dependencies = { 'echasnovski/mini.icons', version = '*' } },
-  {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-      "saadparwaiz1/cmp_luasnip",
-      "L3MON4D3/LuaSnip",
-    }
-  },
+  { "ibhagwan/fzf-lua" },
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", event = { "BufReadPost", "BufNewFile" } },
   { "ellisonleao/gruvbox.nvim",        priority = 1000 },
-  { 'echasnovski/mini.statusline',     version = '*' }
+  { 'echasnovski/mini.icons',          version = false },
+  { 'echasnovski/mini.statusline',     version = false },
+  { 'echasnovski/mini.completion',     version = false }
 }
 
 return { M }

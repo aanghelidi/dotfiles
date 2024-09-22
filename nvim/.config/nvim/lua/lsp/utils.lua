@@ -1,6 +1,6 @@
 local on_attach = function(client, bufnr)
   if client.supports_method("textDocument/completion") then
-    vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
+    vim.bo[bufnr].omnifunc = "v:lua.MiniCompletion.completefunc_lsp"
   end
 
   if client.supports_method("textDocument/definition") then

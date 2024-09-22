@@ -4,6 +4,8 @@ require('settings')
 require('autocmds')
 -- Plugins
 require('plugins')
+---- Tree-sitter
+require('plugins.treesitter')
 -- LSP
 require('lsp.mappings')
 require('lsp.pyright')
@@ -22,8 +24,6 @@ require('plugins.colorscheme')
 ---- Icons
 require('plugins.icons')
 ---- Autocompletion
-require('plugins.nvim_cmp')
----- Tree-sitter
-require('plugins.treesitter')
+require('plugins.completion')
 ---- Statusline
 require('plugins.statusline')
