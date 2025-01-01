@@ -1,0 +1,13 @@
+cursor-style = block
+cursor-style-blink = true
+font-family = Lilex Nerd Font Mono Regular
+font-size = 11
+link-url = true
+mouse-hide-while-typing = true
+quick-terminal-animation-duration = 0.1
+quick-terminal-position = top
+shell-integration = bash
+shell-integration-features = cursor,sudo,title
+theme = Symfonic
+window-height = 9999
+window-width = 9999
