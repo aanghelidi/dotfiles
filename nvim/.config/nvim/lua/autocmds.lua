@@ -31,3 +31,14 @@ if vim.fn.executable('sqlformat') then
     command = "silent execute '%!sqlformat -i lower -k upper -r -'"
   })
 end
+-- Lsp forced autostart
+local filetypes = { "python", "lua", "typescript", "zig" }
+
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, { callback = function()
+    local buf_ft = vim.api.nvim_get_option_value("filetype", {buf = 0})
+    local clients = vim.lsp.get_clients()
+    if next(clients) == nil and vim.tbl_contains(filetypes, buf_ft) then
+      vim.cmd("LspStart " .. buf_ft)
+    end
+  end,
+})

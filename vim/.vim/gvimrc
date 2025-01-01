@@ -9,4 +9,4 @@ set guioptions-=b
 set guioptions+=d
 set guioptions+=a
 set guioptions+=P
-set guifont=JetBrains\ Mono\ Nerd\ Font\ Mono\ 10
+set guifont=Lilex\ Nerd\ Font\ 11

@@ -4,25 +4,23 @@ require('settings')
 require('autocmds')
 -- Plugins
 require('plugins')
----- Theme
-require('plugins.colorscheme')
----- Tree-sitter
+-- Tree-sitter
 require('plugins.treesitter')
 -- LSP
 require('lsp.pyright')
 require('lsp.luals')
 require('lsp.ruff')
 require('lsp.tsserver')
+require('lsp.deno')
 require('lsp.gopls')
 require('lsp.bash')
 require('lsp.dockerls')
 require('lsp.html')
 require('lsp.tailwind')
----- Icons
-require('plugins.icons')
----- Autocompletion
+require("lsp.rustanalyzer")
+require("lsp.ocaml")
+require("lsp.zig")
+-- Completions
 require('plugins.completion')
----- Statusline
-require('plugins.statusline')
 -- Fzf
 require('plugins.fzf')
