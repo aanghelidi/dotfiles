@@ -17,6 +17,9 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', '<Leader>bf', vim.lsp.buf.format, bufopts)
+
+  vim.lsp.inlay_hint.enable()
+  --vim.keymap.set('n', '<Leader>th', vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()), bufopts)
 end
 
 return {
