@@ -1,7 +1,7 @@
 {
   "fzf-lua": { "branch": "main", "commit": "98fb51f2820ead2f8e3c37a7071d7a113b07e2c1" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
-  "mini.completion": { "branch": "main", "commit": "633b22be88dcc937b5b4e023464d2741ff03da7d" },
+  "mini.completion": { "branch": "main", "commit": "9fe2b1c8f088394a00b6adf6fee44154b7998b2d" },
   "nvim-lspconfig": { "branch": "master", "commit": "442e077e326ac467daf9cd63e72120fb450a850b" },
   "nvim-treesitter": { "branch": "master", "commit": "205faba1768a6e4c854f156bc6a21a41b242599c" }
 }

@@ -1,6 +1,6 @@
 local utils = require('lsp.utils')
 
-require 'lspconfig'.lua_ls.setup {
+require 'lspconfig'.lua_ls.setup({
   on_attach = utils.on_attach,
   on_init = function(client)
     local path = client.workspace_folders[1].name
@@ -23,4 +23,4 @@ require 'lspconfig'.lua_ls.setup {
   settings = {
     Lua = {}
   }
-}
+})

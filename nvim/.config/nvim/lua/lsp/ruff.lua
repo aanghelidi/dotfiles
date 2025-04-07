@@ -9,8 +9,8 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<Leader>bf', vim.lsp.buf.format, bufopts)
 end
 
-require('lspconfig').ruff.setup {
+require('lspconfig').ruff.setup({
   on_attach = on_attach,
   capabilities = capabilities
-}
+})
 
