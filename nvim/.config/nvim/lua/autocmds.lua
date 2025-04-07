@@ -57,7 +57,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 -- Lsp forced autostart
-local filetypes = { "python", "lua", "typescript", "go" }
+local filetypes = { "python", "lua", "typescript", "go", "sh" }
 
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, { callback = function()
     local buf_ft = vim.api.nvim_get_option_value("filetype", {buf = 0})
