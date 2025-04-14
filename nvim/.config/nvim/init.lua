@@ -2,22 +2,14 @@
 require('settings')
 -- Autocommands
 require('autocmds')
--- Filetype
-require('filetype')
+-- LSP
+require('lsp')
+
 -- Plugins
 require('plugins')
 -- Tree-sitter
 require('plugins.treesitter')
--- LSP
-require('lsp.based_pyright')
-require('lsp.luals')
-require('lsp.ruff')
-require('lsp.tsls')
-require('lsp.gopls')
-require('lsp.bash')
-require('lsp.markdown')
-require('lsp.yaml')
--- Completions
+-- Completion
 require('plugins.completion')
 -- Fzf
 require('plugins.fzf')

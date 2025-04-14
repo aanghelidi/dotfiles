@@ -1,9 +1,7 @@
-local utils = require('lsp.utils')
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-require('lspconfig').basedpyright.setup({
-  on_attach = utils.on_attach,
-  capabilities = capabilities,
+return {
+  cmd = { 'basedpyright-langserver', '--stdio' },
+  filetypes = { 'python' },
+  root_markers = { 'pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', 'ruff.toml' },
   settings = {
     basedpyright = {
       disableOrganizeImports = true,
@@ -21,4 +19,4 @@ require('lspconfig').basedpyright.setup({
       }
     }
   },
-})
+}

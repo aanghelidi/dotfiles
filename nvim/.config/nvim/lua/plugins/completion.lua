@@ -1,3 +1,4 @@
+-- Completion setup
 require('mini.completion').setup({
   delay = { completion = 100, info = 100, signature = 50 },
   window = {

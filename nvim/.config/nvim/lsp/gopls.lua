@@ -1,9 +1,7 @@
-local utils = require('lsp.utils')
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-require('lspconfig').gopls.setup({
-  on_attach = utils.on_attach,
-  capabilities = capabilities,
+return {
+  cmd = { 'gopls' },
+  filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
+  root_markers = { 'go.work', 'go.mod' },
   settings = {
     gopls = {
       gofumpt = true,
@@ -20,4 +18,4 @@ require('lspconfig').gopls.setup({
       },
     },
   },
-})
+}

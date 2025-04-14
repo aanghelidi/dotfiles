@@ -9,17 +9,7 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
   command = "set tabstop=4 softtabstop=4 shiftwidth=4"
 })
 
--- Docker
-local docker_group_id = vim.api.nvim_create_augroup("Docker", {
-  clear = true
-})
-
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-  group = docker_group_id,
-  pattern = "Dockerfile*",
-  command = "set filetype=dockerfile"
-})
-
+-- Sql
 local sql_group_id = vim.api.nvim_create_augroup("SQL", {
   clear = true
 })
@@ -32,38 +22,36 @@ if vim.fn.executable('sqlformat') then
   })
 end
 
--- Golang
+-- LspAttach
+local lsp_group_id = vim.api.nvim_create_augroup("LspGroup", {})
 
-local golang_group_id = vim.api.nvim_create_augroup("Go", {
-  clear = true
-})
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = lsp_group_id,
+  callback = function(args)
+    local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.go",
-  callback = function()
-    local params = vim.lsp.util.make_range_params(0, "utf-8")
-    params.context = {only = {"source.organizeImports"}}
-    local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
-    for cid, res in pairs(result or {}) do
-      for _, r in pairs(res.result or {}) do
-        if r.edit then
-          local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
-          vim.lsp.util.apply_workspace_edit(r.edit, enc)
-        end
-      end
+    -- Unset 'formatexpr'
+    vim.bo[args.buf].formatexpr = nil
+
+    -- Configure MiniCompletion
+    if client:supports_method('textDocument/completion') then
+      vim.bo[args.buf].omnifunc = "v:lua.MiniCompletion.completefunc_lsp"
+      -- Built-in completion
+      -- vim.lsp.completion.enable(true, client.id, args.buf, {autotrigger = true})
     end
-    vim.lsp.buf.format({async = false})
-  end
-})
 
--- Lsp forced autostart
-local filetypes = { "python", "lua", "typescript", "go", "sh", "javascript", "markdown", "yaml" }
+    -- -- Add custom mapping
+    local bufopts = { silent = true, buffer = args.buf }
 
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, { callback = function()
-    local buf_ft = vim.api.nvim_get_option_value("filetype", {buf = 0})
-    local clients = vim.lsp.get_clients()
-    if next(clients) == nil and vim.tbl_contains(filetypes, buf_ft) then
-      vim.cmd("LspStart " .. buf_ft)
-    end
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+    vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
+    vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set('n', '<Leader>bf', vim.lsp.buf.format, bufopts)
+    vim.keymap.set('n', '<Leader>ds', vim.lsp.buf.document_symbol, bufopts)
+
+    -- -- Enable inlay hints
+    vim.lsp.inlay_hint.enable()
   end,
 })
