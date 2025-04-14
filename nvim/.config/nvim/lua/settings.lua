@@ -35,3 +35,9 @@ vim.keymap.set({'n', 'i', 'v'}, '<Left>', ':echo "<- is disabled!"<CR>', { norem
 vim.keymap.set({'n', 'i', 'v'}, '<Right>', ':echo "-> is disabled!"<CR>', { noremap=true, silent=true })
 vim.keymap.set('i', '<C-l>', '<C-x><C-l>', { noremap=true, silent=true })
 vim.keymap.set('i', '<C-Space>', '<C-x><C-o>', { noremap=true, silent=true })
+
+-- Diagnostics
+vim.diagnostic.config({
+  virtual_text = false,
+  virtual_lines = { current_line = true }
+})
