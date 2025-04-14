@@ -7,6 +7,8 @@ require('lsp')
 
 -- Plugins
 require('plugins')
+-- Themes
+require('plugins.themes')
 -- Tree-sitter
 require('plugins.treesitter')
 -- Completion

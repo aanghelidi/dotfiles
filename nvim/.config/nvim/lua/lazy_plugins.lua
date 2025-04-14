@@ -6,6 +6,10 @@ local M = {
   },
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", event = { "BufReadPost", "BufNewFile" } },
   { "echasnovski/mini.completion", version = false },
+  {
+    "olimorris/onedarkpro.nvim",
+    priority = 1000, -- Ensure it loads first
+  }
 }
 
 return { M }

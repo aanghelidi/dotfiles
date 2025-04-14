@@ -1,8 +1,9 @@
 {
-  "fzf-lua": { "branch": "main", "commit": "8be395a41079d1bc08b0f8601d435c173ea2507e" },
+  "fzf-lua": { "branch": "main", "commit": "fef064a6ed09f7c3c7d58c7b58c9c021acf064e6" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "mini.completion": { "branch": "main", "commit": "cf3625d2c4a437f5edf7e61382e0fe522fc76fb7" },
   "mini.icons": { "branch": "main", "commit": "397ed3807e96b59709ef3292f0a3e253d5c1dc0a" },
   "nvim-lspconfig": { "branch": "master", "commit": "e39da6a820d2a700904117d29f0dd476d64262cf" },
-  "nvim-treesitter": { "branch": "master", "commit": "7bbed4b548d9a81c14351bda93d16336edefd067" }
+  "nvim-treesitter": { "branch": "master", "commit": "7bbed4b548d9a81c14351bda93d16336edefd067" },
+  "onedarkpro.nvim": { "branch": "main", "commit": "5d9f719f622f798bea37bc243ec46581b8efc9b7" }
 }
