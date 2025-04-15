@@ -11,5 +11,15 @@ require("blink.cmp").setup({
 	fuzzy = { implementation = "prefer_rust" },
 	keymap = { preset = "super-tab" },
 	signature = { enabled = true },
-	sources = { default = { "lsp", "path", "buffer", "omni" } },
+	sources = {
+		default = { "lsp", "path", "buffer", "omni" },
+		per_filetype = {
+			sql = { "dadbod" },
+			plsql = { "dadbod" },
+			mysql = { "dadbod" },
+		},
+		providers = {
+			dadbod = { module = "vim_dadbod_completion.blink" },
+		},
+	},
 })

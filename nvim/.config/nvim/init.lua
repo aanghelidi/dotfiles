@@ -17,3 +17,5 @@ require("plugins.completion")
 require("plugins.fzf")
 -- Ale
 require("plugins.ale")
+-- SQL dadbod
+require("plugins.dadbod")

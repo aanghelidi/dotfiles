@@ -8,6 +8,19 @@ local M = {
 	},
 	{ "dense-analysis/ale" },
 	{ "saghen/blink.cmp", version = "1.*" },
+	{
+		"kristijanhusak/vim-dadbod-ui",
+		dependencies = {
+			{ "tpope/vim-dadbod", lazy = true },
+			{ "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
+		},
+		cmd = {
+			"DBUI",
+			"DBUIToggle",
+			"DBUIAddConnection",
+			"DBUIFindBuffer",
+		},
+	},
 }
 
 return { M }
