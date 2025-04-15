@@ -4,7 +4,16 @@ vim.lsp.config('*', {
 })
 
 -- Enable servers
-local lspServers = { 'luals', 'basedpyright', 'ruff', 'gopls', 'ts_ls', 'bashls', 'marksman', 'yamlls' }
+local lspServers = {
+  'luals',
+  'basedpyright',
+  'ruff',
+  'gopls',
+  'ts_ls',
+  'bashls',
+  'marksman',
+  'yamlls',
+}
 for _, lspServer in ipairs(lspServers) do
   vim.lsp.enable(lspServer)
 end

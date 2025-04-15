@@ -15,3 +15,5 @@ require('plugins.treesitter')
 require('plugins.completion')
 -- Fzf
 require('plugins.fzf')
+-- Conform
+require('plugins.conform')
