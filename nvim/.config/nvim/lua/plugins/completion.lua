@@ -1,17 +1,15 @@
 -- Completion setup
-require("mini.completion").setup({
-	delay = { completion = 100, info = 100, signature = 50 },
-	window = {
-		info = { height = 25, width = 80, border = "none" },
-		signature = { height = 25, width = 80, border = "none" },
+require("blink.cmp").setup({
+	appearance = { nerd_font_variant = "mono" },
+	completion = {
+		list = { selection = { preselect = false, auto_insert = true } },
+		accept = { auto_brackets = { enabled = false } },
+		menu = { draw = { treesitter = { "lsp" } } },
+		documentation = { auto_show = false },
+		trigger = { show_in_snippet = false },
 	},
-	lsp_completion = {
-		source_func = "omnifunc",
-		auto_setup = false,
-	},
-	fallback_action = "<C-p>",
-	mappings = {
-		force_twostep = "<C-Space>",
-	},
-	set_vim_settings = true,
+	fuzzy = { implementation = "prefer_rust" },
+	keymap = { preset = "super-tab" },
+	signature = { enabled = true },
+	sources = { default = { "lsp", "path", "buffer", "omni" } },
 })

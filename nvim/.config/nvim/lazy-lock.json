@@ -1,10 +1,10 @@
 {
   "ale": { "branch": "master", "commit": "366de225fdd9ddef29a5b947c419303278af0c01" },
+  "blink.cmp": { "branch": "main", "commit": "cb5e346d9e0efa7a3eee7fd4da0b690c48d2a98e" },
   "fzf-lua": { "branch": "main", "commit": "970fc983b887cead7d630e062fed01337e41b25d" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
-  "mini.completion": { "branch": "main", "commit": "cf3625d2c4a437f5edf7e61382e0fe522fc76fb7" },
   "mini.icons": { "branch": "main", "commit": "397ed3807e96b59709ef3292f0a3e253d5c1dc0a" },
-  "nvim-lspconfig": { "branch": "master", "commit": "e39da6a820d2a700904117d29f0dd476d64262cf" },
-  "nvim-treesitter": { "branch": "master", "commit": "7bbed4b548d9a81c14351bda93d16336edefd067" },
+  "nvim-lspconfig": { "branch": "master", "commit": "3a7387a9c980304059b2bd7075684d6ef98ff331" },
+  "nvim-treesitter": { "branch": "master", "commit": "684eeac91ed8e297685a97ef70031d19ac1de25a" },
   "onedarkpro.nvim": { "branch": "main", "commit": "5d9f719f622f798bea37bc243ec46581b8efc9b7" }
 }
