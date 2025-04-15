@@ -10,8 +10,8 @@ require("ale").setup({
 		typescript = { "biome" },
 		json = { "biome" },
 		css = { "biome" },
-		sql = { "sqlformat" },
 		terraform = { "terraform_fmt" },
+		sql = { "sqlfluff" },
 	},
 	fix_on_save = 1,
 	history_enabled = 0,
@@ -36,6 +36,8 @@ require("ale").setup({
 	use_neovim_diagnostics_api = true,
 	use_neovim_lsp_api = true,
 	virtualtext_cursor = "disabled", -- important to use virtual_lines
+	-- Fixers / Linters settings
+	python_auto_uv = 1,
 })
 
 -- Diagnostics (use ALE to populate and control neovim diagnostic API directly)

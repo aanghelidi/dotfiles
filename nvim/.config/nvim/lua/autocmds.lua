@@ -27,7 +27,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			-- vim.lsp.completion.enable(true, client.id, args.buf, {autotrigger = true})
 		end
 
-		-- -- Add custom mapping
+		-- Add custom mapping
 		local bufopts = { silent = true, buffer = args.buf }
 
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
@@ -38,7 +38,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "<Leader>bf", vim.lsp.buf.format, bufopts)
 		vim.keymap.set("n", "<Leader>ds", vim.lsp.buf.document_symbol, bufopts)
 
-		-- -- Enable inlay hints
+		-- Enable inlay hints
 		vim.lsp.inlay_hint.enable()
 	end,
 })
