@@ -1,6 +1,6 @@
 vim.filetype.add({
-  pattern = {
-    ['.*.ya?ml'] = 'yaml',
-    ['Dockerfile*'] = 'dockerfile',
-  },
+	pattern = {
+		[".*.ya?ml"] = "yaml",
+		["Dockerfile*"] = "dockerfile",
+	},
 })

@@ -1,19 +1,19 @@
 -- Basic settings
-require('settings')
+require("settings")
 -- Autocommands
-require('autocmds')
+require("autocmds")
 -- LSP
-require('lsp')
+require("lsp")
 
 -- Plugins
-require('plugins')
+require("plugins")
 -- Themes
-require('plugins.themes')
+require("plugins.themes")
 -- Tree-sitter
-require('plugins.treesitter')
+require("plugins.treesitter")
 -- Completion
-require('plugins.completion')
+require("plugins.completion")
 -- Fzf
-require('plugins.fzf')
--- Conform
-require('plugins.conform')
+require("plugins.fzf")
+-- Ale
+require("plugins.ale")
