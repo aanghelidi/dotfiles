@@ -9,19 +9,6 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 	command = "set tabstop=4 softtabstop=4 shiftwidth=4",
 })
 
--- Sql
-local sql_group_id = vim.api.nvim_create_augroup("SQL", {
-	clear = true,
-})
-
-if vim.fn.executable("sqlformat") then
-	vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-		group = sql_group_id,
-		pattern = "*.sql",
-		command = "silent execute '%!sqlformat -i lower -k upper -r -'",
-	})
-end
-
 -- LspAttach
 local lsp_group_id = vim.api.nvim_create_augroup("LspGroup", {})
 
