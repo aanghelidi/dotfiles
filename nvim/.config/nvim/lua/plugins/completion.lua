@@ -4,10 +4,9 @@ require("blink.cmp").setup({
 	completion = {
 		list = { selection = { preselect = false, auto_insert = true } },
 		accept = { auto_brackets = { enabled = false } },
-		menu = { auto_show = false, draw = { treesitter = { "lsp" } } },
+		menu = { auto_show = true, draw = { treesitter = { "lsp" } } },
 		documentation = { auto_show = false },
 		trigger = { show_in_snippet = false },
-		ghost_text = { enabled = true, show_with_menu = false, show_without_selection = true },
 	},
 	fuzzy = { implementation = "prefer_rust" },
 	keymap = { preset = "super-tab" },

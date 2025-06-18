@@ -18,7 +18,7 @@ require("ale").setup({
 	lint_on_save = 1,
 	lint_on_text_changed = "normal",
 	linters = {
-		python = { "mypy" },
+		python = {},
 		go = { "staticcheck" },
 		sh = { "shellcheck" },
 		javascript = { "biome" },
@@ -35,13 +35,13 @@ require("ale").setup({
 	linters_explicit = true,
 	use_neovim_diagnostics_api = true,
 	use_neovim_lsp_api = true,
-	virtualtext_cursor = "disabled", -- important to use virtual_lines
+	-- virtualtext_cursor = "disabled", -- important to use virtual_lines
 	-- Fixers / Linters settings
 	python_auto_uv = 1,
 })
 
 -- Diagnostics (use ALE to populate and control neovim diagnostic API directly)
 vim.diagnostic.config({
-	virtual_text = false,
-	virtual_lines = { current_line = true },
+	virtual_text = true,
+	-- virtual_lines = { current_line = true },
 })

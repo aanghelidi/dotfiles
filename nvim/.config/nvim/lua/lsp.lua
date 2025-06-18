@@ -12,6 +12,8 @@ local lspServers = {
 	"bashls",
 	"marksman",
 	"yamlls",
+	--"pyrefly",
+	"ty",
 	"jedi_language_server",
 }
 for _, lspServer in ipairs(lspServers) do
