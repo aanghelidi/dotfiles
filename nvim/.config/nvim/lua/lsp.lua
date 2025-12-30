@@ -12,9 +12,7 @@ local lspServers = {
 	"bashls",
 	"marksman",
 	"yamlls",
-	--"pyrefly",
-	"ty",
-	"jedi_language_server",
+  "zuban",
 }
 for _, lspServer in ipairs(lspServers) do
 	vim.lsp.enable(lspServer)

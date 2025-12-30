@@ -5,7 +5,7 @@ require("blink.cmp").setup({
 		list = { selection = { preselect = false, auto_insert = true } },
 		accept = { auto_brackets = { enabled = false } },
 		menu = { auto_show = true, draw = { treesitter = { "lsp" } } },
-		documentation = { auto_show = false },
+		documentation = { auto_show = true },
 		trigger = { show_in_snippet = false },
 	},
 	fuzzy = { implementation = "prefer_rust" },

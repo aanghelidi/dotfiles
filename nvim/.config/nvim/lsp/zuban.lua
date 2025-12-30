@@ -1,5 +1,5 @@
 return {
-  cmd = { 'jedi-language-server' },
+	cmd = { "zuban", "server" },
   filetypes = { 'python' },
   root_markers = {
     'pyproject.toml',
@@ -7,5 +7,7 @@ return {
     'setup.cfg',
     'requirements.txt',
     'ruff.toml',
+    'uv.lock',
+    'mypy.ini'
   },
 }

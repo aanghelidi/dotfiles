@@ -18,7 +18,7 @@ require("ale").setup({
 	lint_on_save = 1,
 	lint_on_text_changed = "normal",
 	linters = {
-		python = {},
+		python = { "zuban" },
 		go = { "staticcheck" },
 		sh = { "shellcheck" },
 		javascript = { "biome" },
